@@ -1,0 +1,33 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const TokenSchema = new Schema({
+  title: String,
+  value: Number
+});
+
+const TaskSchema = new Schema(
+  {
+    question: {
+      type: String,
+      required: true
+    },
+    tokenPairs: {
+      type: Object,
+      required: false
+    },
+    completed: {
+      type: Boolean,
+      default: false
+    }
+  },
+  {
+    timestamps: {
+      createdAt: "created_at"
+    }
+  }
+);
+
+const Task = mongoose.model("Task", TaskSchema);
+
+module.exports = Task;

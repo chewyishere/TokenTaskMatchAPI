@@ -17,12 +17,7 @@
           </tr>
         </tbody>
       </table>
-      <UpdateTaskModal
-        :task="task"
-        :allTokens="allTokens"
-        @updateTask="updateTask"
-        :key="task._id"
-      />
+      <UpdateTaskModal :task="task" :allTokens="allTokens" :key="task._id"/>
       <br>
     </div>
   </article>
@@ -42,9 +37,6 @@ export default {
       deleteTask(this.task._id)
         .then(() => this.$emit("deleteTask", this.task._id))
         .catch(err => alert(err));
-    },
-    updateTask(task) {
-      this.$emit("updateTask", task);
     }
   }
 };

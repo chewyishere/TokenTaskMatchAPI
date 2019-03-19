@@ -54,8 +54,7 @@ export default {
         tokenPairs: this.task.tokenPairs
       };
       updateTask(data, this.task._id)
-        .then(data => {
-          this.$emit("updateTask", data.task);
+        .then(() => {
           if (update.length === undefined) this.toggle();
         })
         .catch(err => alert(err.message));

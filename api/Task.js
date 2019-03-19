@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const TokenSchema = new Schema({
-  title: String,
-  value: Number
-});
-
 const TaskSchema = new Schema(
   {
     question: {

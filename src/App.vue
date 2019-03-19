@@ -34,7 +34,6 @@
             :allTokens="tokens"
             :key="index"
             @deleteTask="deleteTask"
-            @updateTask="updateTask"
           />
         </div>
       </div>
@@ -68,10 +67,6 @@ export default {
     deleteTask(id) {
       let tasks = this.tasks.filter(task => task._id != id);
       this.tasks = tasks;
-    },
-    updateTask(task) {
-      this.deleteTask(task._id);
-      this.createTask(task);
     },
     createTask(task) {
       this.tasks = [task, ...this.tasks];
